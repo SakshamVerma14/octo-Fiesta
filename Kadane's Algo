@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#define mo 1000000007
+#define ll long long int
+#define pb push_back
+#define pob pop_back
+#define ff first
+#define ss second
+using namespace std;
+void solve()
+{
+    ll n;
+    cin>>n;
+    vector<ll>v;
+    for(ll i=0;i<n;i++)
+    {
+        ll x;
+        cin>>x;
+        v.pb(x);
+    }
+    ll max_so=v[0];
+    ll max_cur=v[0];
+    for(ll i=1;i<n;i++)
+    {
+        max_cur=max(v[i],max_cur+v[i]);
+        max_so=max(max_so,max_cur);
+    }
+    cout<<max_so<<"\n"; 
+}
+int main()
+{
+    solve();
+    return 0;
+}
